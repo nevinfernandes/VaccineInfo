@@ -39,7 +39,7 @@ namespace VaccineInfo
                 //Iterate through the centers and display each center details
                 var centers = details["centers"];
                 int count = centers.Count();
-                if (details.Count > 0)
+                if (details.Count > 0 && count > 0)
                 {
                     for (int i = 0; i < count; i++)
                     {
