@@ -46,7 +46,6 @@
             this.pincode.AllowDrop = true;
             resources.ApplyResources(this.pincode, "pincode");
             this.pincode.Name = "pincode";
-            this.pincode.TextChanged += new System.EventHandler(this.pincode_TextChanged);
             this.pincode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pincode_KeyPress);
             this.pincode.Validating += new System.ComponentModel.CancelEventHandler(this.pincode_Validating);
             // 
@@ -89,7 +88,7 @@
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Value = new System.DateTime(2021, 5, 5, 0, 0, 0, 0);
             // 
-            // Form1
+            // VaccineDashboard
             // 
             this.AcceptButton = this.submit;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -102,7 +101,7 @@
             this.Controls.Add(this.label_pincode);
             this.Controls.Add(this.pincode);
             this.KeyPreview = true;
-            this.Name = "Form1";
+            this.Name = "VaccineDashboard";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
