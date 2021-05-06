@@ -26,9 +26,12 @@ namespace VaccineInfo
                 // Hit the API with query params
                 string url = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=" + pincode + "&date=" + date;
                 WebRequest request = HttpWebRequest.Create(url);
-                WebResponse response = request.GetResponse();
+
+                //Add Headers
+                ((HttpWebRequest)request).UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0";
 
                 //store the response
+                WebResponse response = request.GetResponse();
                 StreamReader reader = new StreamReader(response.GetResponseStream());
                 string urlText = reader.ReadToEnd(); // it takes the response from your url. now you can use as your need  
 
@@ -77,11 +80,6 @@ namespace VaccineInfo
                 MessageBox.Show("Please Enter Valid Pincode and Date");
             }
         }
-
-        private void pincode_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void pincode_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             ValidatePincode();
@@ -116,6 +114,5 @@ namespace VaccineInfo
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) ;
         }
 
-        
     }
 }
